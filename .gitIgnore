@@ -1,3 +1,6 @@
 .gradle
 .idea
 **.jar
+.class[1~[D[D[D[D[D[D[D[D**class
+**/build/**
+**/*.war

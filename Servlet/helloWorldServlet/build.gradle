@@ -3,6 +3,14 @@ version '1'
 
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'idea'
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
 
 sourceCompatibility = 1.8
 
@@ -16,6 +24,8 @@ war {
 }
 dependencies {
 
-    providedCompile "javax.servlet:javax.servlet-api:${servletVersion}"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+    compile "javax.servlet:javax.servlet-api:${servletVersion}"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
